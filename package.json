@@ -7,6 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest run",
+    "format": "prettier --write",
+    "check:fast": "pnpm lint && pnpm typecheck && pnpm test",
+    "check:staged": "node scripts/check-staged.mjs",
+    "prepare": "node scripts/install-hooks.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,7 +28,9 @@
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
     "oxlint": "^1.79.0",
+    "prettier": "^3.6.2",
     "typescript": "~6.0.2",
-    "vite": "^8.2.2"
+    "vite": "^8.2.2",
+    "vitest": "^3.2.4"
   }
 }
